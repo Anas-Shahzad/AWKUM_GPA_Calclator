@@ -17,6 +17,15 @@ Lightweight Flask web app for accurate GPA and CGPA calculations with mobile-fir
 - `requirements.txt`: Python deps.
 - `Procfile`: Process entry for Render/Railway/Heroku.
 
+### Clone the repository
+```bash
+open terminal in VS Code or any other IDE
+git clone https://github.com/Anas-Shahzad/AWKUM_GPA_Calclator.git
+cd AWKUM_GPA_Calclator
+code .
+git pull origin main
+```
+
 ## Running Locally
 ```bash
 python -m venv .venv
