@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GPA & CGPA Calculator</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="hero">
+        <div class="container hero__content">
+            <div>
+                <p class="eyebrow">Student Toolkit</p>
+                <h1>GPA & CGPA Calculator</h1>
+                <p class="lede">According to AWKUM grading criteria. Enter your courses, hit calculate, and get instant results.</p>
+            </div>
+            <div class="hero__cta">
+                <button id="gpaModeBtn" class="pill pill--active" aria-pressed="true">GPA</button>
+                <button id="cgpaModeBtn" class="pill" aria-pressed="false">CGPA</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="gpaSection" class="card">
+            <div class="card__header">
+                <h2>Single Semester GPA</h2>
+                <p class="muted">Add courses for this semester. Marks auto-convert to grade points.</p>
+            </div>
+            <div id="gpaCourses"></div>
+            <div class="actions">
+                <button id="addGpaCourse" class="btn btn--add">Add Course</button>
+                <button id="calculateGpa" class="btn btn--primary">Calculate GPA</button>
+                <button id="resetGpa" class="btn btn--ghost">Reset</button>
+            </div>
+        </section>
+
+        <section id="cgpaSection" class="card card--hidden">
+            <div class="card__header">
+                <h2>Multi-Semester CGPA</h2>
+                <p class="muted">Add semesters, then add courses inside each semester.</p>
+            </div>
+            <div id="semesterList"></div>
+            <div class="actions">
+                <button id="addSemester" class="btn btn--add">Add Semester</button>
+                <button id="calculateCgpa" class="btn btn--primary">Calculate CGPA</button>
+                <button id="resetCgpa" class="btn btn--ghost">Reset</button>
+            </div>
+        </section>
+
+        <section class="card" aria-live="polite">
+            <div class="card__header">
+                <h2>Result</h2>
+                <p class="muted">Rounded to two decimals.</p>
+            </div>
+            <div id="resultBox" class="result">
+                <p class="muted">No calculation yet.</p>
+            </div>
+            <div id="errorBox" class="error" role="alert" aria-live="assertive"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="muted">Powered by Flask · Developed by Anas Shahzad</p>
+            <p class="muted">© 2026 Anas Shahzad. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+</body>
+</html>
